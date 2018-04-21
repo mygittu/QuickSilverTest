@@ -34,12 +34,7 @@ include Makefile
 OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
-OBJECTFILES= \
-	${OBJECTDIR}/RPQTree.o \
-	${OBJECTDIR}/SimpleEstimator.o \
-	${OBJECTDIR}/SimpleEvaluator.o \
-	${OBJECTDIR}/SimpleGraph.o \
-	${OBJECTDIR}/main.o
+OBJECTFILES=
 
 
 # C Compiler Flags
@@ -64,32 +59,7 @@ LDLIBSOPTIONS=
 
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/test.exe: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
-	${LINK.cc} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/test ${OBJECTFILES} ${LDLIBSOPTIONS}
-
-${OBJECTDIR}/RPQTree.o: RPQTree.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -I. -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/RPQTree.o RPQTree.cpp
-
-${OBJECTDIR}/SimpleEstimator.o: SimpleEstimator.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -I. -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/SimpleEstimator.o SimpleEstimator.cpp
-
-${OBJECTDIR}/SimpleEvaluator.o: SimpleEvaluator.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -I. -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/SimpleEvaluator.o SimpleEvaluator.cpp
-
-${OBJECTDIR}/SimpleGraph.o: SimpleGraph.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -I. -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/SimpleGraph.o SimpleGraph.cpp
-
-${OBJECTDIR}/main.o: main.cpp
-	${MKDIR} -p ${OBJECTDIR}
-	${RM} "$@.d"
-	$(COMPILE.cc) -g -I. -std=c++14 -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/main.o main.cpp
+	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/test ${OBJECTFILES} ${LDLIBSOPTIONS}
 
 # Subprojects
 .build-subprojects:
